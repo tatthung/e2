@@ -1,6 +1,3 @@
-*Any instructions/notes in italics should be removed from the template before 
-submitting*
-
 # Project 1
 + By: Tatt Hung
 + Production URL: <http://e2p1.tatthung.me>

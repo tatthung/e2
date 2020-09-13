@@ -1,9 +1,7 @@
-## Week 4 assignment - War (card game)
-
 <!doctype html>  
  <html lang='en'>   
   <head>     
-   <title>War Game</title>    
+   <title>Project 1: War Game</title>    
     <meta charset='utf-8'>   
   </head>  
   <body>   
