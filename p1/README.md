@@ -9,4 +9,4 @@ submitting*
 *your list of ourside resources go here, e.g. Stackoverflow*
 
 ## Notes for instruction
-*any notes for instructor to while grading/ omit this section if none*
+*any notes for instructor to while grading/ omit this section if there is none*
