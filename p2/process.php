@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+session_start(); #start session
 
 $playerB = $_GET['playerB'];
 

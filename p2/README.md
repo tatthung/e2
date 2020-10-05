@@ -4,7 +4,7 @@
 + Production URL: <http://e2p2.tatthung.me>  
 
 ## Outside resources 
-1. xxx
+1. unknown
 
 ## Notes for instruction 
 1. This is the modified version of the conventional rock-scissors-paper game. 

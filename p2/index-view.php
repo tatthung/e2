@@ -35,7 +35,6 @@
             <fieldset>
                 <legend>
                     <h2>
-
                         Results
                     </h2>
                 </legend>
@@ -44,34 +43,37 @@
                 The winner for this round is <b><?php echo $winner; ?></b><br>
             </fieldset>
         </ul>
-        <?php } ?>
 
+        <?php } ?>
 
         <?php if ($winner == 'Tie') { ?>
         <ul>
-            Please select your move
-            <input type='radio' name='playerBSecondHand' id='rock' value='rock' checked="checked"><label
-                for='rock'>Rock</label>
-            <input type='radio' name='playerBSecondHand' id='scissors' value='scissors'><label
-                for='scissors'>Scissors</label>
-            <input type='radio' name='playerBSecondHand' id='paper' value='paper'><label for='paper'>Paper</label>
-            <button name='Submit2' type='submit' value='winnerTwo'>Throw a Move</button><br><br>
-            }
-            <?php if ($haveResultsTwo) { ?>
-            <fieldset>
-                <legend>
-                    <h2>
+            Please select your next move
+            <input type='radio' name='playerBSecondHand' id='rock2' value='rock' checked="checked"><label
+                for='rock2'>Rock</label>
+            <input type='radio' name='playerBSecondHand' id='scissors2' value='scissors'><label
+                for='scissors2'>Scissors</label>
+            <input type='radio' name='playerBSecondHand' id='paper2' value='paper'><label for='paper2'>Paper</label>
+            <button name='Submit2' type='submit' value='winnerTwo' onclick="return getData()">Throw a
+                Move</button><br><br>
+            <?php } exit();
+ ?>
 
-                        Results
-                    </h2>
-                </legend>
+            <div style="color:blue;">
+                <?php if ($haveResultsTwo) { ?>
                 Computer threw <?php echo $playerASecondHand; ?><br>
                 You threw <?php echo $playerBSecondHand; ?><br>
                 The winner for this round is <b><?php echo $winnerTwo; ?></b><br>
-            </fieldset>
-            } <?php } ?>
+                } else {
+                $playerASecondHand = null;
+                $playerBSecondHand = null;
+                $winnerTwo = null;
+                }
+                ?> <?php } ?>
+            </div>
+
         </ul>
-        <?php } ?>
+
 
     </body>
 

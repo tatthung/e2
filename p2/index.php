@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+session_start(); #start session
 
 if (isset($_SESSION['results'])) {
     extract($_SESSION['results']);
