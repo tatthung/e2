@@ -14,7 +14,8 @@
         <h2>Advance Rock-Scissors-Paper Game</h2>
         <h2>Mechanics</h2>
         <ul>
-            <li>Player A and Player B randomly “throw” either Rock, Paper or Scissors.</li>
+            <li>Player A and Player B will compete with each other either Rock, 
+Paper or Scissors.</li>
             <li>A tie is declared if both players throw the same move.</li>
             <li>Otherwise: Rock beats Scissors, Scissors beats Paper, Paper beats Rock.</li>
             <li>In the case of a tie, both the players need to war each other for the second attempt with their second
@@ -32,16 +33,12 @@
             <input type='radio' name='playerB' id='paper' value='paper'><label for='paper'>Paper</label>
             <button name='Submit1' type='submit' value='winner'>Throw a Move</button><br><br>
             <?php if ($haveResults) { ?>
-            <fieldset>
-                <legend>
-                    <h2>
-                        Results
-                    </h2>
-                </legend>
-                Computer threw <?php echo $playerA; ?><br>
-                You threw <?php echo $playerB; ?><br>
-                The winner for this round is <b><?php echo $winner; ?></b><br>
-            </fieldset>
+            <h2>
+                Results
+            </h2>
+            Computer threw <?php echo $playerA; ?><br>
+            You threw <?php echo $playerB; ?><br>
+            The winner for this round is <b><?php echo $winner; ?></b><br>
         </ul>
 
         <?php } ?>
