@@ -34,8 +34,8 @@
                         for='scissors'>Scissors</label>
                     <input type='radio' name='playerB' id='paper' value='paper'><label for='paper'>Paper</label>
                     <button name='Submit1' type='submit' value='winner'>Throw a Move</button><br>
-                    <hr>
                     <?php if ($haveResults) { ?>
+                    <hr>
                     <h2>
                         Results
                     </h2>
@@ -65,4 +65,5 @@
         <?php } ?>
 
     </body>
+
 </html>
