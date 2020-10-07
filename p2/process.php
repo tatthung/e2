@@ -2,19 +2,20 @@
 
 session_start(); #start session
 
+$moves = ['rock', 'scissors', 'paper']; # Build an array to introduce Rock, Scissors and Paper
+$diceMoves = ['1', '2', '3', '4', '5', '6']; # Build an array to introduce a dice with 6 faces
+
+# Round 1: Randomly set Player A and B's move - either rock, scissors or paper
+$playerA = $moves[rand(0, 2)];
 $playerB = $_GET['playerB'];
 
-$moves = ['rock', 'scissors', 'paper']; # Build an array to introduce Rock, Scissors and Paper
+$playerBSecondHand = $diceMoves[rand(0, 5)];
+$playerASecondHand = $diceMoves[rand(0, 5)];
 
-# Randomly set Player A and B's move - either rock, scissors or paper
-$playerA = $moves[rand(0, 2)];
-
-$playerBSecondHand = $_GET['playerBSecondHand'];
-$playerASecondHand = $moves[rand(0, 2)];
-
-
-# Rock beats Scissors, Scissors beats Paper, Paper beats Rock.
-if ($playerA == $moves[0] and $playerB == $moves[1]) {
+# Round 1: Rock beats Scissors, Scissors beats Paper, Paper beats Rock.
+if ($playerA == $playerB) { # if there is a tie in Round 1
+    $winner = 'Tie';
+} elseif ($playerA == $moves[0] and $playerB == $moves[1]) {
     $winner = 'Player A';
 } elseif ($playerA == $moves[1] and $playerB == $moves[2]) {
     $winner = 'Player A';
@@ -24,65 +25,16 @@ if ($playerA == $moves[0] and $playerB == $moves[1]) {
     $winner = 'Player B';
 }
 
-
-# In the case scenario where Tie happens
-# Both players will get a second chance to throw new moves with their second hand
-# Winning the second round refers to winning that overall round
-if ($playerA == $moves[0] and $playerB == $moves[0]) {
-    $winner = 'Tie';
-} elseif ($playerASecondHand == $moves[0] and $playerBSecondHand == $moves[0]) {
-    $winnerTwo = 'Tie';
-} elseif ($playerASecondHand == $moves[0] and $playerBSecondHand == $moves[1]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[1] and $playerBSecondHand == $moves[1]) {
-    $winnerTwo = 'Tie';
-} elseif ($playerASecondHand == $moves[1] and $playerBSecondHand == $moves[2]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[2] and $playerBSecondHand == $moves[0]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[2] and $playerBSecondHand == $moves[2]) {
-    $winnerTwo = 'Tie';
-} else {
-    $winnerTwo = 'Player B';
+# In the case scenario where Tie happens (above scenario), both players will get a  chance to roll a dice to determine the fnal winner
+if ($playerBSecondHand == $playerASecondHand) {
+    # if there is a tie in the dice game
+    $winnerTwo = 'Another Tie';
+} elseif ($playerBSecondHand > $playerASecondHand) {
+    $winnerTwo = 'You Won';
+} elseif ($playerBSecondHand < $playerASecondHand) {
+    $winnerTwo = 'Computer Won';
 }
-
-# Second Tie scenario
-if ($playerA == $moves[1] and $playerB == $moves[1]) {
-    $winner = 'Tie';
-} elseif ($playerASecondHand == $moves[0] and $playerBSecondHand == $moves[0]) {
-    $winnerTwo = 'Tie';
-} elseif ($playerASecondHand == $moves[0] and $playerBSecondHand == $moves[1]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[1] and $playerBSecondHand == $moves[1]) {
-    $winnerTwo = 'Tie';
-} elseif ($playerASecondHand == $moves[1] and $playerBSecondHand == $moves[2]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[2] and $playerBSecondHand == $moves[0]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[2] and $playerBSecondHand == $moves[2]) {
-    $winnerTwo = 'Tie';
-} else {
-    $winnerTwo = 'Player B';
-}
-
-# Third Tie scenario
-if ($playerA == $moves[2] and $playerB == $moves[2]) {
-    $winner = 'Tie';
-} elseif ($playerASecondHand == $moves[0] and $playerBSecondHand == $moves[0]) {
-    $winnerTwo = 'Tie';
-} elseif ($playerASecondHand == $moves[0] and $playerBSecondHand == $moves[1]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[1] and $playerBSecondHand == $moves[1]) {
-    $winnerTwo = 'Tie';
-} elseif ($playerASecondHand == $moves[1] and $playerBSecondHand == $moves[2]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[2] and $playerBSecondHand == $moves[0]) {
-    $winnerTwo = 'Player A';
-} elseif ($playerASecondHand == $moves[2] and $playerBSecondHand == $moves[2]) {
-    $winnerTwo = 'Tie';
-} else {
-    $winnerTwo = 'Player B';
-}
+echo $winnerTwo;
 
 $_SESSION['results'] = [
     'playerA' => $playerA,
