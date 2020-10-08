@@ -25,7 +25,7 @@
 
         <h2>Game Play</h2>
         <ul>
-            <div">
+            <div>
                 <fieldset style="background:#ededed;border:0;">
                     Please select your move
                     <input type='radio' name='playerB' id='rock' value='rock' checked="checked"><label
@@ -43,7 +43,7 @@
                     You threw <i style="color:blue;"><?php echo $playerB; ?></i></br><br>
                     The winner for this round is <b><i style="color:green;"><?php echo $winner; ?></i></b>
                     </br>
-                    </div>
+            </div>
         </ul>
 
         <?php } ?>
