@@ -1,5 +1,4 @@
 <?php
-
 # Define 4 different variables, which will
 # each represent how much a given coin is worth
 $penny_value = .01;
@@ -20,6 +19,7 @@ $total = ($pennies * $penny_value) + ($nickels * $nickel_value) + ($dimes * $dim
 ?>
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
 
     <title>PHPiggy Bank</title>
@@ -29,11 +29,13 @@ $total = ($pennies * $penny_value) + ($nickels * $nickel_value) + ($dimes * $dim
 
 <body>
 
-    <img alt='PHPiggy Bank Logo' src='https://s3.amazonaws.com/making-the-internet/php-piggy-bank-logo@2x.png' style='width:202px;'>
+    <img alt='PHPiggy Bank Logo' src='https://s3.amazonaws.com/making-the-internet/php-piggy-bank-logo@2x.png'
+        style='width:202px;'>
 
     <p>
         You have $<?php echo $total; ?> in your piggy bank.
     </p>
 
 </body>
+
 </html>
