@@ -1,17 +1,16 @@
 <?php
 namespace App\Controllers;
 
-use App\Products; 
+use App\Products;
 
-class ProductController extends Controller
+class MissingController extends Controller
 {
-    public function index() 
+    public function missing()
     {
         $products = new Products($this->app->path('database/products.json'));
 
-        return $this->app->view('products.index', [
+        return $this->app->view('products.missing', [
             'products' => $products->getAll()
         ]);
-    }   
-
+    }
 }
