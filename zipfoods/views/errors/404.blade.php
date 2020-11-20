@@ -2,25 +2,25 @@
 <html lang='en'>
 <head>
 
-	<title>404 Page Not Found</title>
-	<meta charset='utf-8'>
+    <title>404 Page Not Found</title>
+    <meta charset='utf-8'>
 
 </head>
 <body>
 
-@extends('templates.master')
+    @extends('templates.master')
 
-@section('title')
+    @section('title')
     All Products
-@endsection
+    @endsection
 
-@section('content')
-<h2>404 Page Not Found</h2>
-<a href='{{ $app->config('app.url') }}'>{{ $app->config('app.url') }}</a>
+    @section('content')
+    <h2>404 Page Not Found</h2>
+    <a href='{{ $app->config('app.url') }}'>{{ $app->config('app.url') }}</a>
 
-@endsection
+    @endsection
 
 
-	
+
 </body>
 </html>
