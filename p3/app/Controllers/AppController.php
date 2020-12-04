@@ -16,16 +16,24 @@ class AppController extends Controller
 
     public function history()
     {
-        return $this->app->view('history');
-        #return $this->app->view('index', [
-         #]);
+        $rounds = $this->app->db()->all('rounds');
+        
+        return $this->app->view('history', [
+            'rounds' => $rounds 
+        ]);
     }
 
     public function round()
     {
-        return $this->app->view('round');
-        #return $this->app->view('index', [
-         #]);
+        $id = $this->app->param('id');
+        $computer = $this->app->old('Computer');
+
+        $round = $this->app->db()->findById('rounds', $id);
+
+        return $this->app->view('round', [
+            'round' => $round,
+            'Computer' => $computer
+        ]);
     }
 
     public function play()
