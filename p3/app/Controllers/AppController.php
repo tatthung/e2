@@ -23,9 +23,8 @@ class AppController extends Controller
     public function round()
     {
         $id = $this->app->param('id');
-
         $round = $this->app->db()->findById('rounds', $id);
-
+       
         return $this->app->view('round', [
             'round' => $round,
         ]);

@@ -48,7 +48,6 @@ Advance Rock-Scissors-Paper Game
     Tie
     @endif
 
-
 </div>
 
 @endif
