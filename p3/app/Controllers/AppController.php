@@ -3,9 +3,6 @@ namespace App\Controllers;
 
 class AppController extends Controller
 {
-    /**
-     * This method is triggered by the route "/"
-     */
     public function index()
     {
         $results = $this->app->old('results');
@@ -26,17 +23,15 @@ class AppController extends Controller
     public function round()
     {
         $id = $this->app->param('id');
-        $computer = $this->app->old('Computer');
 
         $round = $this->app->db()->findById('rounds', $id);
 
         return $this->app->view('round', [
             'round' => $round,
-            'Computer' => $computer
         ]);
     }
 
-    public function play()
+     public function play()
     {
         $moves = ['rock', 'scissors', 'paper'];  
         $computer = $moves[rand(0, 2)];
@@ -56,6 +51,7 @@ class AppController extends Controller
         
         $data = [
             'move' => $move,
+            'Computer' => $computer,
             'win' => $win,
             'time' => date('Y-m-d H:i:s'),
         ];
@@ -68,7 +64,6 @@ class AppController extends Controller
                 'move' => $move,
                 'Computer' => $computer,
                 'win' => $win,
-                'lose' => $win
             ]
         ]);
     }

@@ -35,14 +35,8 @@ Advance Rock-Scissors-Paper Game
 
 @if($results)
 
-<h3 style="display:none;">
-    @if($results['win']=='Computer'){{ $mycls='lost'}}
-    @elseif($results['win']=='move'){{ $mycls='won'}}
-    @else {{$mycls='tie'}}
-    @endif
-</h3>
+<div class='{{ $results['win'] ? 'won' : 'lost' }}'>
 
-<div class='{{ $mycls }}'>
     <p>You threw {{ $results['move'] }}</p>
     <p>Computer threw {{ $results['Computer'] }}</p>
 
@@ -53,6 +47,7 @@ Advance Rock-Scissors-Paper Game
     @else
     Tie
     @endif
+
 
 </div>
 
