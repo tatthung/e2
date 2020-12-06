@@ -15,7 +15,7 @@ class AppCommand extends Command
     {
         $this->app->db()->createTable('rounds', [
             'move' => 'varchar(50)',
-            'Computer' => 'varchar(15)',
+            'Computer' => 'varchar(50)',
             'win' => 'varchar(15)', 
             'time' => 'timestamp'
 ]);
@@ -35,7 +35,6 @@ class AppCommand extends Command
             # Set up a round
             $round = [
                 'move' => $moves[$randomMove],
-                'Computer' => $computer[$randomMove],
                 'win' => rand(0, 1),
                 'time' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s')
             ];
