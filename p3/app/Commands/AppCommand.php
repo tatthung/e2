@@ -14,7 +14,7 @@ class AppCommand extends Command
     public function migrate()
     {
         $this->app->db()->createTable('rounds', [
-            'move' => 'varchar(50)',
+            'Player' => 'varchar(50)',
             'Computer' => 'varchar(50)',
             'win' => 'varchar(15)', 
             'time' => 'timestamp'
@@ -34,7 +34,7 @@ class AppCommand extends Command
             
             # Set up a round
             $round = [
-                'move' => $moves[$randomMove],
+                'Player' => $moves[$randomMove],
                 'win' => rand(0, 1),
                 'time' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s')
             ];

@@ -9,7 +9,7 @@ Round Details
 
 <h2>Round Details<h2>
         <ul>
-            <li>Player threw {{ $round['move'] }}</li>
+            <li>Player threw {{ $round['Player'] }}</li>
             <li>Computer threw {{ $round['Computer'] }}</li>
             <li>Who won this round: {{ $round['win'] }}</li>
             <li>Time: {{ $round['time']}}</li>

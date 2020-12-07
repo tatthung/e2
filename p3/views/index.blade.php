@@ -1,7 +1,7 @@
 @extends('templates.master')
 
 @section('title')
-Advance Rock-Scissors-Paper Game
+Rock-Scissors-Paper Game
 
 @endsection
 
@@ -13,36 +13,50 @@ Advance Rock-Scissors-Paper Game
 <form method='POST' action='/play'>
 
     <label>
-        <input type='radio' name='move' value='rock' checked>
+        <input type='radio' name='Player' value='rock'>
         Rock
     </label>
 
     <label>
-        <input type='radio' name='move' value='scissors'>
+        <input type='radio' name='Player' value='scissors'>
 
         Scissors
     </label>
 
     <label>
-        <input type='radio' name='move' value='paper'>
+        <input type='radio' name='Player' value='paper'>
 
         Paper
     </label>
 
     <button type='submit'>Throw a move</button>
 
+    @if($app->errorsExist())
+    <ul class='error alert alert-danger'>
+        @foreach($app->errors() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+    @endif
+
+
 </form>
 
 @if($results)
 
-<div class='{{ $results['win'] ? 'won' : 'lost' }}'>
+@if($results['win']=='Computer'){{ $mycls='lost'}}
+@elseif($results['win']=='Player'){{ $mycls='won'}}
+@else {{$mycls='tie'}}
+@endif
 
-    <p>You threw {{ $results['move'] }}</p>
+<div class='{{ $mycls }}'>
+
+    <p>You threw {{ $results['Player'] }}</p>
     <p>Computer threw {{ $results['Computer'] }}</p>
 
     @if($results['win']=='Computer')
     You Lost
-    @elseif($results['win']=='move')
+    @elseif($results['win']=='Player')
     You Win
     @else
     Tie

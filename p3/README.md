@@ -1,8 +1,12 @@
-# e2framework
+# Project 3
++ Rock-Scissors-Paper Game
++ By: Tatt Hung
++ Production URL: <http://e2p3.tatthung.me>
 
-*e2framework* is a rudimentary PHP framework designed for the course [DGMD E-2 Web Programming for Beginners with PHP](https://hesweb.dev/e2).
+## Outside resources
+1. How to solve unidentified index: https://www.stechies.com/undefined-index-error-php/#:~:text=When%20using%20them%2C%20you%20might,no%20value%20assigned%20to%20it.&text=This%20function%20will%20check%20whether,or%20not%2C%20before%20using%20them.
 
-The goal of this software is to provide students an introduction to working with more advanced PHP frameworks such as Laravel and/or Symfony.
+2. Using jQuery class selector for mycls https://www.freetimelearning.com/jquery/jquery-selectors.php
 
-+ __Documentation:__ <https://hesweb.dev/e2/notes/php/e2framework/installation>
-+ __Guide:__ <https://hesweb.dev/e2/notes/php/frameworks/intro>
+## Notes for instructor
+N/A

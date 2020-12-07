@@ -32,9 +32,13 @@ class AppController extends Controller
 
      public function play()
     {
+        $this->app->validate([
+            'Player' => 'required'
+        ]);
+
         $moves = ['rock', 'scissors', 'paper'];  
         $computer = $moves[rand(0, 2)];
-        $move = $this->app->input('move');  
+        $move = $this->app->input('Player');  
 
         if ($computer == $move) { # if there is a tie
             $win = 'Tie'; 
@@ -45,11 +49,11 @@ class AppController extends Controller
         } elseif ($computer == $moves[2] and $move == $moves[0]) {
             $win = 'Computer';
         } else {
-            $win = 'move';
+            $win = 'Player';
         }
         
         $data = [
-            'move' => $move,
+            'Player' => $move,
             'Computer' => $computer,
             'win' => $win,
             'time' => date('Y-m-d H:i:s'),
@@ -60,7 +64,7 @@ class AppController extends Controller
         #Redirect user back to the homepage
         $this->app->redirect('/', [
             'results' => [
-                'move' => $move,
+                'Player' => $move,
                 'Computer' => $computer,
                 'win' => $win,
             ]
