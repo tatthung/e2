@@ -15,5 +15,6 @@ Game History
             @endforeach
         </ul>
 
+        <a href='/' style='font-size:16px;'>Return to main page....</a>
 
         @endsection

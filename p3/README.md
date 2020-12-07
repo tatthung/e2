@@ -9,4 +9,9 @@
 2. Using jQuery class selector for mycls https://www.freetimelearning.com/jquery/jquery-selectors.php
 
 ## Notes for instructor
-N/A
+Dear Susan 
+1. Since this is just a project and is due for submission, I am going to stop and submit this rock-scissors-paper version.
+2. I plan to expand my experience further by creating a tie breaker by introducing the second table (e.g. roundsTwo).
+3. There is a tie break in the event of a tie, where both Player and Computer will randomly throw a dice to determine the final winner.
+4. Can I try to work on such a game and ask you for guidance via email even after Week 14? 
+Thank you.

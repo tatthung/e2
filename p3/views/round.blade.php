@@ -15,4 +15,6 @@ Round Details
             <li>Time: {{ $round['time']}}</li>
         </ul>
 
+        <a href='/history' style='font-size:16px;'>Return to history page....</a>
+
         @endsection
