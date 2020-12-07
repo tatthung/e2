@@ -9,7 +9,11 @@ Rock-Scissors-Paper Game
 
 <h2>Instructions</h2>
 
-<p>Throw one of your move by selecting the follow option and submit to win the game!</p>
+<p style='color:purple'>Throw one of your move by selecting the follow option. <br>
+    Click on the submit button to throw your move. <br>
+    Rock will beat scissors, Scissors will beat paper, and paper will beat rock. <br>
+    In the case where you beat the computer, you will win the game. Otherwise, you will lose.</p><br>
+
 <form method='POST' action='/play'>
 
     <label>
@@ -39,15 +43,16 @@ Rock-Scissors-Paper Game
     </ul>
     @endif
 
-
 </form>
 
 @if($results)
 
-@if($results['win']=='Computer'){{ $mycls='lost'}}
-@elseif($results['win']=='Player'){{ $mycls='won'}}
-@else {{$mycls='tie'}}
-@endif
+<div style='display:none'>
+    @if($results['win']=='Computer'){{ $mycls='lost'}}
+    @elseif($results['win']=='Player'){{ $mycls='won'}}
+    @else {{$mycls='tie'}}
+    @endif
+</div>
 
 <div class='{{ $mycls }}'>
 
